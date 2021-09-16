@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+
+
+    <context:property-placeholder location="classpath*:/properties/*.properties"></context:property-placeholder>
+
+
+
+    <bean class="redis.clients.jedis.JedisPoolConfig" id="jedisPoolConfig"
+          p:testOnBorrow="${redis.testOnBorrow}" p:maxIdle="${redis.maxIdle}" p:maxWaitMillis="${redis.maxWaitMillis}"
+    ></bean>
+    <bean class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory" id="redisConnectionFactory"
+          p:password="${redis.password}" p:database="${redis.database}" p:hostName="${redis.hostName}"
+          p:port="${redis.port}" p:poolConfig-ref="jedisPoolConfig"
+    ></bean>
+    <bean class="org.springframework.data.redis.core.RedisTemplate" id="redisTemplate"
+          p:connectionFactory-ref="redisConnectionFactory"></bean>
+
+</beans>

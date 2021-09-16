@@ -1,0 +1,12 @@
+server:
+  port: 9009
+spring:
+  application:
+    name: dongyimai-sms
+  activemq:
+    broker-url: tcp://192.168.10.10:61616
+sms:
+  accountSId: "aaf98f894e3e5b81014e4a0f259f0c95"
+  accountToken: "a00f4df8904441eea913402b6952fcbb"
+  appId: "8a216da87ba59937017bc5ac0a0d06bd"
+

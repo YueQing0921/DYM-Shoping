@@ -1,0 +1,22 @@
+# 项目排除路径
+/Cart-interface/target/
+/Cart-service/target/
+/Cart-web/target/
+/Common/target/
+/Dao/target/
+/Interface/target/
+/Manager/target/
+/Page-interface/target/
+/Page-service/target/
+/Page-web/target/
+/Pojo/target/
+/Portal/target/
+/Search-interface/target/
+/Search-service/target/
+/Search-web/target/
+/Service/target/
+/Shop/target/
+/Solr/target/
+/User-interface/target/
+/User-service/target/
+/User-web/target/
